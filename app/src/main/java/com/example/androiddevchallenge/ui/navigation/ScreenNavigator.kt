@@ -20,6 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.screen.PomodoroHistoryScreen
+import com.example.androiddevchallenge.ui.screen.PomodoroTrackerScreen
 
 enum class Destinations {
     PomodoroTrackerScreen {
@@ -48,7 +49,7 @@ fun ScreenNavigator() {
     NavHost(navController, startDestination = Destinations.PomodoroTrackerScreen.getRoute()) {
         composable(
             route = Destinations.PomodoroTrackerScreen.getRoute()
-        ) { PomodoroHistoryScreen(navController) }
+        ) { PomodoroTrackerScreen(navController) }
         composable(
             route = Destinations.PomodoroHistoryScreen.getRoute()
         ) { PomodoroHistoryScreen(navController) }

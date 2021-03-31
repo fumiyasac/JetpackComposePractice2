@@ -15,15 +15,27 @@
  */
 package com.example.androiddevchallenge.ui.screen
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.androiddevchallenge.ui.common.CommonAppBar
 
@@ -44,8 +56,33 @@ fun PomodoroTrackerScreen(
             color = MaterialTheme.colors.background,
             modifier = Modifier.fillMaxHeight()
         ) {
-            //
-            Text(text = "PomodoroTrackerScreen")
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                val (currentClickCount, setClickCount) = remember {
+                    mutableStateOf(value = 0)
+                }
+                Button(
+                    onClick = {
+                        val newClicks = currentClickCount + 1
+                        setClickCount(newClicks)
+                    }
+                ) {
+                    Text(text = "Click This Button !!!")
+                }
+                Spacer(
+                    modifier = Modifier
+                        .padding(top = 24.dp)
+                )
+                Text(text = "PomodoroTrackerScreen")
+                Spacer(
+                    modifier = Modifier
+                        .padding(top = 12.dp)
+                )
+                Text(text = "Button Clicked ($currentClickCount) Times !!!")
+            }
         }
     }
 }
