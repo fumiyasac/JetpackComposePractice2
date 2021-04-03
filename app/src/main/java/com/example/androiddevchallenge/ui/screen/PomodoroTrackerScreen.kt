@@ -107,11 +107,11 @@ fun PomodoroTrackerContent1() {
 @Composable
 fun PomodoroTrackerContent2() {
     var name by rememberSaveable { mutableStateOf("") }
-    PomodoroTrackerParts(name = name, onNameChanged = { name = it })
+    PomodoroTrackerParts(name = name, onNameChange = { name = it })
 }
 
 @Composable
-fun PomodoroTrackerParts(name: String, onNameChanged: (String) -> Unit) {
+fun PomodoroTrackerParts(name: String, onNameChange: (String) -> Unit) {
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
             modifier = Modifier.padding(bottom = 8.dp),
@@ -121,7 +121,7 @@ fun PomodoroTrackerParts(name: String, onNameChanged: (String) -> Unit) {
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             value = name,
-            onValueChange = { onNameChanged(it) },
+            onValueChange = { onNameChange(it) },
             label = { Text("Name") }
         )
     }
