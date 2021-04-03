@@ -61,7 +61,9 @@ fun PomodoroTrackerScreen(
             Column (
                 modifier = Modifier.padding(16.dp),
             ) {
+                // MEMO: ボタンを押下してカウントをインクリメントする処理をまとめたもの
                 PomodoroTrackerContent1()
+                // MEMO:
                 PomodoroTrackerContent2()
             }
         }
@@ -104,7 +106,6 @@ fun PomodoroTrackerContent1() {
 
 @Composable
 fun PomodoroTrackerContent2() {
-    //　MEMO: Stateを保持して
     var name by rememberSaveable { mutableStateOf("") }
     PomodoroTrackerParts(name = name, onNameChanged = { name = it })
 }
