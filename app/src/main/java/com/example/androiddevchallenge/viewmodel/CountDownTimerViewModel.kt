@@ -163,10 +163,10 @@ class CountDownTimerViewModel : ViewModel() {
             TimeUnit.SEC -> {
                 seconds = updateTime(seconds, timeOperator).coerceIn(0, 59)
             }
-            TimeUnit.MIN ->{
+            TimeUnit.MIN -> {
                 minutes = updateTime(minutes, timeOperator).coerceIn(0, 59)
             }
-            TimeUnit.HOUR ->{
+            TimeUnit.HOUR -> {
                 hours = updateTime(hours, timeOperator).coerceIn(0, 23)
             }
         }
@@ -187,10 +187,14 @@ class CountDownTimerViewModel : ViewModel() {
     }
 
     // タイマー表示時間更新処理
-    private fun formatHourMinuteSecond(hours : Int,minutes : Int,seconds : Int) =
+    private fun formatHourMinuteSecond(hours: Int, minutes: Int, seconds: Int) =
         String.format("%02d:%02d:%02d", hours, minutes, seconds)
 
     // LiveDataから時間・分・秒の値を取得する
-    private fun getSeconds() = ((hours.value ?: 0) * MINUTES_IN_HOUR * SECS_IN_MINUTES) + ((minutes.value
-        ?: 0) * SECS_IN_MINUTES) + (seconds.value ?: 0)
+    private fun getSeconds() = ((hours.value ?: 0) * MINUTES_IN_HOUR * SECS_IN_MINUTES) + (
+        (
+            minutes.value
+                ?: 0
+            ) * SECS_IN_MINUTES
+        ) + (seconds.value ?: 0)
 }

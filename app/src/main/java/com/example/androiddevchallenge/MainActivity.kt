@@ -18,6 +18,7 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -25,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.ui.navigation.ScreenNavigator
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
+@ExperimentalAnimationApi
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+@ExperimentalAnimationApi
 @Composable
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
@@ -44,6 +47,7 @@ fun MyApp() {
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
+@ExperimentalAnimationApi
 @Composable
 fun LightPreview() {
     MyTheme {
@@ -52,6 +56,7 @@ fun LightPreview() {
 }
 
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
+@ExperimentalAnimationApi
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
