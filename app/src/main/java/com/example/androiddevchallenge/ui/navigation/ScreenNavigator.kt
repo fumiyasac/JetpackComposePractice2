@@ -15,43 +15,30 @@
  */
 package com.example.androiddevchallenge.ui.navigation
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.androiddevchallenge.ui.screen.PomodoroHistoryScreen
-import com.example.androiddevchallenge.ui.screen.PomodoroTrackerScreen
+import com.example.androiddevchallenge.ui.screen.MainScreen
+import com.example.androiddevchallenge.viewmodel.CountDownTimerViewModel
 
-enum class Destinations {
-    PomodoroTrackerScreen {
-        override fun toString(): String {
-            return "PomodoroTracker"
-        }
-        override fun getRoute(): String {
-            return "PomodoroTracker"
-        }
-    },
-    PomodoroHistoryScreen {
-        override fun toString(): String {
-            return "PomodoroHistory"
-        }
-        override fun getRoute(): String {
-            return "PomodoroHistory"
-        }
-    };
-
-    abstract fun getRoute(): String
+object Destinations {
+    const val MainScreen = "MainScreen"
 }
 
+@ExperimentalAnimationApi
 @Composable
 fun ScreenNavigator() {
     val navController = rememberNavController()
-    NavHost(navController, startDestination = Destinations.PomodoroTrackerScreen.getRoute()) {
+    NavHost(navController, startDestination = Destinations.MainScreen) {
         composable(
-            route = Destinations.PomodoroTrackerScreen.getRoute()
-        ) { PomodoroTrackerScreen(navController) }
-        composable(
-            route = Destinations.PomodoroHistoryScreen.getRoute()
-        ) { PomodoroHistoryScreen(navController) }
+            route = Destinations.MainScreen
+        ) {
+            MainScreen(
+                navController = navController,
+                countDownTimerViewModel = CountDownTimerViewModel()
+            )
+        }
     }
 }
