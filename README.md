@@ -1,27 +1,26 @@
-# Template repository
+# Put title of your app here
 
-Template repository for the Jetpack Compose [#AndroidDevChallenge](https://developer.android.com/dev-challenge).
+![Workflow result](https://github.com/fumiyasac/JetpackComposePractice2/workflows/Check/badge.svg)
 
-## Getting started
-Copy this repository by pressing the "Use this template" button in Github.
-Clone your repository and open it in the latest [Android Studio (Canary build)](https://developer.android.com/studio/preview).
+## :scroll: Description
 
-## Submission requirements
-- Follow the challenge description on the project website: [developer.android.com/dev-challenge](https://developer.android.com/dev-challenge)
-- All UI should be written using Jetpack Compose
-- The Github Actions workflow should complete successfully
-- Include two screenshots of your submission in the [results](results) folder. The names should be
-  screenshot_1.png and screenshot_2.png.
-- Include a screen record of your submission in the [results](results) folder. The name should be
-  video.mp4
-- Replace the contents of [README.md](README.md) with the contents of [README-template.md](README-template.md) and fill out the template.
+2021年3月3日から始まったJetpack Composeのbeta版を利用したトライアル 「Week #2 - Countdown timer」を自分の手元で実践してみたものになります。
 
-## Code formatting
-The CI uses [Spotless](https://github.com/diffplug/spotless) to check if your code is formatted correctly and contains the right licenses.
-Internally, Spotless uses [ktlint](https://github.com/pinterest/ktlint) to check the formatting of your code.
-To set up ktlint correctly with Android Studio, follow one of the [listed setup options](https://github.com/pinterest/ktlint#-with-intellij-idea).
+https://android-developers.googleblog.com/2021/03/android-dev-challenge-2.html
 
-Before committing your code, run `./gradlew app:spotlessApply` to automatically format your code.
+__【参考資料】__
+
+今回は画面デザインと実装については下記の記事内容を参考にしています。
+
+- [Let’s Make a Countdown Timer app using Android Compose ⏱](https://proandroiddev.com/lets-make-a-countdown-timer-app-using-android-compose-762cbdd16f3f)
+
+## :bulb: Motivation and Context
+
+時間・秒・分を指定して、指定時間だけタイマーを実行するだけのシンプルな処理になります。
+
+## :camera_flash: Screenshots
+
+<img src="/results/screenshot1.png" width="260">&emsp;<img src="/results/screenshot2.png" width="260">
 
 ## License
 ```
