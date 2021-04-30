@@ -65,7 +65,7 @@ android {
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0-beta01'
     implementation 'com.google.android.material:material:1.3.0'
     implementation "androidx.activity:activity-compose:1.3.0-alpha03"
     implementation "androidx.compose.ui:ui:$compose_version"
@@ -73,8 +73,10 @@ dependencies {
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
     implementation "androidx.compose.ui:ui-tooling:$compose_version"
     // MEMO: 画面遷移のRouting用に「Navigation Compose」を利用する
-    implementation 'androidx.navigation:navigation-compose:1.0.0-alpha08'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+    implementation "androidx.navigation:navigation-compose:1.0.0-alpha08"
+    // MEMO: 画面構築で必要な依存関係を定義する
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$compose_version"
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
 
     testImplementation 'junit:junit:4.13.2'
 
