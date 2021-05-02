@@ -31,7 +31,10 @@ object Destinations {
 @Composable
 fun ScreenNavigator() {
     val navController = rememberNavController()
-    NavHost(navController, startDestination = Destinations.MainScreen) {
+    NavHost(
+        navController = navController,
+        startDestination = Destinations.MainScreen
+    ) {
         composable(
             route = Destinations.MainScreen
         ) {
